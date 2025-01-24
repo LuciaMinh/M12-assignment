@@ -43,25 +43,25 @@ jbox.addAlbum(album3)
  // Populate the dropdown menu
  const albumSelect = document.getElementById('albumSelect');
  jbox.albums.forEach((album, index) => {
-     const option = document.createElement('option');
+     const option = document.createElement('option')
      option.value = index; // Store album index
-     option.textContent = `${album.artist} - ${album.title}`;
-     albumSelect.appendChild(option);
+     option.textContent = `${album.artist} - ${album.title}`
+     albumSelect.appendChild(option)
  });
 
  // Play button event
  document.getElementById('playButton').addEventListener('click', () => {
-     const selectedIndex = albumSelect.value;
-     jbox.albums[selectedIndex].play();
-     alert(`${jbox.albums[selectedIndex].title} is now playing!`);
- });
+     const selectedIndex = albumSelect.value
+     jbox.albums[selectedIndex].play()
+     alert(`${jbox.albums[selectedIndex].title} is now playing!`)
+ })
 
  // Show favorite album button event
  document.getElementById('favoriteButton').addEventListener('click', () => {
      const favorite = jbox.favoriteAlbum();
      if (favorite) {
-         document.getElementById('favoriteAlbum').textContent = favorite.display();
+         document.getElementById('favoriteAlbum').textContent = favorite.display()
      } else {
-         document.getElementById('favoriteAlbum').textContent = "No albums have been played yet.";
+         document.getElementById('favoriteAlbum').textContent = "No albums have been played yet."
      }
- });
+ })
